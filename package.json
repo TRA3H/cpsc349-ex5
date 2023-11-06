@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pocketbase": "./pocketbase serve",
+    "esbuild": "esbuild src/app.jsx --outfile=pb_public/app.js --watch",
+    "browsersync": "browser-sync start --server 'pb_public' --files 'pb_public/*/'",
+    "start": "npm-run-all --parallel esbuild pocketbase browsersync"
   },
   "keywords": [],
   "author": "",
